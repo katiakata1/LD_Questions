@@ -1,0 +1,59 @@
+/* Reset default browser styles */
+@font-face {
+    font-family: 'POBEDA';
+    src: url('POBEDA-font.ttf') format('truetype');
+    /* Add additional src declarations for different font formats if necessary */
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'POBEDA', sans-serif;
+    background-color: white;
+}
+
+header {
+    background-color: white;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: white;
+    color: #353131;
+    padding: 10px;
+    text-align: center;
+}
+
+
+
