@@ -97,3 +97,60 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #45a049; /* Change background color on hover */
 }
+
+
+
+/* Styles for small devices (up to 768px) */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 14vw 0vw 6vw 4vw; /* top right bottom left */
+    }
+
+    header h1{
+        padding: 2vw 8vw 1vw 8vw; /* top right bottom left */
+        font-size: 9.5vw;
+    }
+
+    form {
+        padding: 4vw 4vw 5vw 4vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Adjust font size and padding for text input */
+    input[type="text"] {
+        width: 80%; 
+        height: 40px; 
+        font-size: 20px; 
+        padding: 5px; 
+    }
+
+    /* Adjust padding for submit button */
+    input[type="submit"] {
+        padding: 8px 15px; 
+        margin-top: 20px; 
+    }
+
+    footer {
+        padding: 3vw;
+    }
+}
+
+/* Styles for medium to large devices (769px and above) */
+@media screen and (min-width: 769px) {
+    header {
+        padding: 20px;
+    }
+
+    input[type="text"] {
+        width: 50%; 
+        height: 50px; 
+        font-size: 25px; 
+        padding: 10px; 
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px; 
+        margin-top: 10px; 
+    }
+}
