@@ -11,49 +11,89 @@ body, h1, h2, h3, h4, h5, h6, p, ul, li {
 }
 
 body {
+    margin: 0;
     font-family: 'POBEDA', sans-serif;
     background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Ensure that the body is a flex container with column layout */
+}
+
+.wrapper {
+    flex: 1; /* Make the wrapper grow to fill the remaining space vertically */
+    display: flex;
+    flex-direction: column; /* Ensure that the wrapper is a flex container with column layout */
+}
+
+html, body, .wrapper {
+    height: 100%; /* Ensure that all parent elements have a height of 100% */
+}
+
+main {
+    flex: 1;
 }
 
 header {
     background-color: white;
-    color: #fff;
+    color: #333;
     padding: 20px;
     text-align: center;
-}
-
-nav {
-    background-color: #555;
-    color: #fff;
-    padding: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main {
-    padding: 20px;
 }
 
 footer {
-    background-color: white;
-    color: #353131;
+    margin-top: auto; 
+    background-color: #333;
+    color: #fff;
     padding: 10px;
     text-align: center;
+    width: 100%;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container img {
+    max-width: 400px; 
+    max-height: 200px; 
 }
 
 
+/* Submit area */
+form {
+    padding: 20px; 
+    justify-content: center;
+    align-items: center;
+}
 
+/* Button design */
+input[type="text"] {
+    width: 80vw; /* Set the width of the input box */
+    height: 4vw; /* Set the height of the input box */
+    padding: 10px; /* Add padding to the input box */
+    border: 1px solid #ccc; /* Add a border to the input box */
+    border-radius: 25px; /* Add rounded corners to the input box */
+    background-color: #8EF182; /* Set the background color of the input box to green */
+    color: #333; /* Set the text color */
+    font-size: 25px; /* Set the font size */
+}
+
+/* Apply styles to the submit button */
+input[type="submit"] {
+    /* Add your custom styles here */
+    padding: 5px 10px; /* Add padding to the button */
+    background-color: #4CAF50; /* Set the background color */
+    color: white; /* Set the text color */
+    border: none; /* Remove the border */
+    border-radius: 5px; /* Add rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    margin-top: 10px; /* Add margin at the top */
+}
+
+/* Hover effect for the submit button */
+input[type="submit"]:hover {
+    background-color: #45a049; /* Change background color on hover */
+}
