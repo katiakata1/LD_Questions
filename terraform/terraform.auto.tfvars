@@ -2,7 +2,7 @@ rg_name = "LD_rg"
 location = "UK South"
 
 // Tfstate storage account 
-tfstate_sa_name = "ldquestions_tfstate_sa"
+tfstate_sa_name = "ldquestionstfstatesa"
 
 // Database configuration
 sql_server_name = "ldquestionssqlserver"
