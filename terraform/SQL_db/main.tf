@@ -1,5 +1,5 @@
 # Define SQL Server
-resource "azurerm_sql_server" "sql_server" {
+resource "azurerm_mssql_server" "sql_server" {
   name                         = var.sql_server_name
   resource_group_name          = var.rg_name
   location                     = var.location
@@ -9,14 +9,9 @@ resource "azurerm_sql_server" "sql_server" {
 }
 
 # Define SQL Database
-resource "azurerm_sql_database" "sql_db" {
+resource "azurerm_mssql_database" "sql_db" {
   name                = var.sql_db_name
   resource_group_name = var.rg_name
-  location            = var.location
-  server_name         = azurerm_sql_server.sql_server.name
-  edition             = var.db_edition
+  server_name         = azurerm_mssql_server.sql_server.name
   collation           = var.db_collation
-  auto_pause_delay    = var.db_auto_pause_delay
-  min_capacity        = var.db_min_capacity
-  max_capacity        = var.db_max_capacity
 }
