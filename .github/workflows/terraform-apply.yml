@@ -45,7 +45,7 @@ jobs:
 
       - name: Terraform Init
         working-directory: terraform/
-        run: terraform init
+        run: terraform init -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" -var="client_id=${{ secrets.AZURE_CLIENT_ID }}" -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" -var="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
 
       - name: Terraform Validate
         working-directory: terraform/
