@@ -1,7 +1,14 @@
 // Creating RG
-resource "azurerm_resource_group" "rg" {
-  name     = var.rg_name
-  location = var.location
+# resource "azurerm_resource_group" "rg" {
+#   name     = var.rg_name
+#   location = var.location
+# }
+
+// Creating Storage Account for tfstate
+module "tfstate_sa" {
+    source = "./Storage_account"
+    rg_name = var.rg_name
+    tfstate_sa_name = var.tfstate_sa_name
 }
 
 // Deploying SQL
