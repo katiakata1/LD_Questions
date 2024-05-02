@@ -9,6 +9,7 @@ module "tfstate_sa" {
     source = "./Storage_account"
     rg_name = var.rg_name
     tfstate_sa_name = var.tfstate_sa_name
+    tfstate_container_name = var.tfstate_container_name
 }
 
 // Deploying SQL
