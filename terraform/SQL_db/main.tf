@@ -11,7 +11,6 @@ resource "azurerm_mssql_server" "sql_server" {
 # Define SQL Database
 resource "azurerm_mssql_database" "sql_db" {
   name                = var.sql_db_name
-  resource_group_name = var.rg_name
-  server_name         = azurerm_mssql_server.sql_server.name
+  server_id        = azurerm_mssql_server.sql_server.id
   collation           = var.db_collation
 }
