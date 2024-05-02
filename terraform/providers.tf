@@ -17,14 +17,14 @@ provider "azurerm" {
 }
 
 // Remote tf state
-# terraform {
-#   backend "azurerm" {
-#     resource_group_name   = "LD_rg"
-#     storage_account_name  = "ldquestionstfstatesa"
-#     container_name        = "tfstate"
-#     key                   = "tfstate"
-#   }
-# }
+terraform {
+  backend "azurerm" {
+    resource_group_name   = "LD_rg"
+    storage_account_name  = "ldquestionstfstatesa"
+    container_name        = "tfstate"
+    key                   = "tfstate"
+  }
+}
 
 
 
