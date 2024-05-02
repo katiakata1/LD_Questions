@@ -2,7 +2,7 @@ rg_name = "LD_rg"
 location = "UK South"
 
 // Database configuration
-sql_server_name = "ldsqlserver"
+sql_server_name = "ldquestionssqlserver"
 sql_server_version = "12.0"
 administrator_login = "sql_admin"
 administrator_login_password = "LD_P@ssw0rd123!_secret"

@@ -1,8 +1,12 @@
+data "azurerm_resource_group" "rg" {
+  name = var.rg_name  
+}
+
 # Define SQL Server
 resource "azurerm_mssql_server" "sql_server" {
   name                         = var.sql_server_name
-  resource_group_name          = var.rg_name
-  location                     = var.location
+  resource_group_name          = azurerm_resource_group.rg.name
+  location                     = azurerm_resource_group.rg.location
   version                      = var.sql_server_version
   administrator_login          = var.administrator_login
   administrator_login_password = var.administrator_login_password
