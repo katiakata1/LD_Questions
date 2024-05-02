@@ -5,6 +5,7 @@ location = "UK South"
 tfstate_sa_name = "ldquestionstfstatesa"
 tfstate_container_name = "tfstate"
 
+
 // Database configuration
 sql_server_name = "ldquestionssqlserver"
 sql_server_version = "12.0"
