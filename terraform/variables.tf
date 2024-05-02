@@ -5,3 +5,8 @@ variable "rg_name" {
 variable "location" {
     type = string
 }
+
+variable "subscription_id" {}
+variable "client_id" {}
+variable "client_secret" {}
+variable "tenant_id" {}
