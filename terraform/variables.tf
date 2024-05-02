@@ -12,6 +12,7 @@ variable "client_secret" {}
 variable "tenant_id" {}
 
 variable "tfstate_sa_name" {}
+variable "tfstate_container_name" {}
 
 // SQL Variables
 # variable "sql_server_name" {}

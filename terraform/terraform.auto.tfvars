@@ -3,6 +3,7 @@ location = "UK South"
 
 // Tfstate storage account 
 tfstate_sa_name = "ldquestionstfstatesa"
+tfstate_container_name = "tfstate_container"
 
 // Database configuration
 sql_server_name = "ldquestionssqlserver"
