@@ -14,9 +14,9 @@ variable "tenant_id" {}
 variable "tfstate_sa_name" {}
 
 // SQL Variables
-variable "sql_server_name" {}
-variable "sql_server_version" {}
-variable "administrator_login" {}
-variable "administrator_login_password" {}
-variable "sql_db_name" {}
-variable "db_collation" {}
+# variable "sql_server_name" {}
+# variable "sql_server_version" {}
+# variable "administrator_login" {}
+# variable "administrator_login_password" {}
+# variable "sql_db_name" {}
+# variable "db_collation" {}
