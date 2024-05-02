@@ -1,19 +1,6 @@
-variable "rg_name" {
-    type = string
-}
-
-variable "location" {
-    type = string
-}
-
-variable "subscription_id" {}
-variable "client_id" {}
-variable "client_secret" {}
-variable "tenant_id" {}
-
-
-// SQL Variables
 variable "sql_server_name" {}
+variable "rg_name" {}
+variable "location" {}
 variable "sql_server_version" {}
 variable "administrator_login" {}
 variable "administrator_login_password" {}
