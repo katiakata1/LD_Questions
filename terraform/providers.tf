@@ -19,8 +19,8 @@ provider "azurerm" {
 // Remote tf state
 terraform {
   backend "azurerm" {
-    resource_group_name   = var.rg_name
-    storage_account_name  = var.tfstate_sa_name
+    resource_group_name   = "LD_rg"
+    storage_account_name  = "ldquestionstfstatesa"
     container_name        = "tfstate"
     key                   = "tfstate"
   }
