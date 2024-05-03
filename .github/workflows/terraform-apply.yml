@@ -48,7 +48,7 @@ jobs:
 
       - name: List Terraform State Locks
         run: |
-          cd path/to/terraform/configuration/directory
+          cd terraform
           terraform state list
 
       # - name: Check for Existing Locks
