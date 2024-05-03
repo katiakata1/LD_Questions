@@ -46,17 +46,17 @@ jobs:
         with:
           terraform_version: 1.0.0
 
-      - name: List Terraform State Locks
-        run: |
-          cd terraform
-          terraform state list
-
       # - name: Check for Existing Locks
       #   run: terraform force-unlock -force 9af567f0-d8d3-1db0-873a-fe22695f9f7c
 
       - name: Terraform Init
         working-directory: terraform/
         run: terraform init -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" -backend-config="client_id=${{ secrets.AZURE_CLIENT_ID }}" -backend-config="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
+
+      - name: List Terraform State Locks
+        run: |
+          cd terraform
+          terraform state list
 
       - name: Terraform Validate
         working-directory: terraform/
