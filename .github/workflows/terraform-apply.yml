@@ -46,6 +46,9 @@ jobs:
         with:
           terraform_version: 1.0.0
 
+      - name: Check for Existing Locks
+        run: terraform force-unlock -state=tfstate/terraform.tfstate
+
       - name: Terraform Init
         working-directory: terraform/
         run: terraform init -backend-config="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" -backend-config="client_id=${{ secrets.AZURE_CLIENT_ID }}" -backend-config="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" -backend-config="tenant_id=${{ secrets.AZURE_TENANT_ID }}"
