@@ -47,7 +47,7 @@ jobs:
           terraform_version: 1.0.0
 
       - name: Check for Existing Locks
-        run: terraform force-unlock 9af567f0-d8d3-1db0-873a-fe22695f9f7c -force
+        run: terraform force-unlock -force 9af567f0-d8d3-1db0-873a-fe22695f9f7c
 
       - name: Terraform Init
         working-directory: terraform/
