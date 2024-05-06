@@ -12,9 +12,6 @@ RUN apt-get update && \
     apt-get install -y build-essential gcc unixodbc-dev unixodbc odbcinst && \
     rm -rf /var/lib/apt/lists/*
 
-# Install any needed Python dependencies specified in requirements.txt
-# RUN pip install --no-cache-dir -r requirements.txt
-
 # Second stage: Runtime environment
 FROM python:3.9-slim
 
@@ -27,6 +24,13 @@ COPY --from=builder /app /app
 RUN apt-get update && \
     apt-get install -y unixodbc odbcinst libodbc1 && \
     rm -rf /var/lib/apt/lists/*
+
+RUN apt-get update && apt-get install -y curl gnupg && \
+    curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
+    curl https://packages.microsoft.com/config/debian/12/prod.list > /etc/apt/sources.list.d/mssql-release.list && \
+    sed -i 's/signed-by=\/usr\/share\/keyrings\/microsoft-prod.gpg//' /etc/apt/sources.list.d/mssql-release.list && \
+    apt-get update && \
+    ACCEPT_EULA=Y apt-get install -y msodbcsql18 
 
 # Set the PATH environment variable
 ENV PATH="/app:${PATH}"
