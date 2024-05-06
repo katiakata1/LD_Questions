@@ -18,3 +18,4 @@ resource "azurerm_mssql_database" "sql_db" {
   server_id        = azurerm_mssql_server.sql_server.id
   collation           = var.db_collation
 }
+
