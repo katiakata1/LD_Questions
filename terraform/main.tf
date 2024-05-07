@@ -37,6 +37,7 @@ module "container_app" {
     container_cpu = var.container_cpu
     container_memory = var.container_memory
     container_name = var.container_name
+    container_port = var.container_port
 }
 
 
