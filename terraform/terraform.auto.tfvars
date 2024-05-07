@@ -23,3 +23,5 @@ image_name = "bujanobujanovakatia/ld-questions:latest"
 container_cpu = "0.5"
 container_memory = "1.5"
 container_name = "ld-questions-web"
+
+container_port = "80"
