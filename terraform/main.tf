@@ -24,6 +24,21 @@ module "sql" {
     db_collation = var.db_collation
 }
 
+// Deploying Container App
+module "container_app" {
+    source = "./Container_app"
+    rg_name = var.rg_name
+    container_logs_name = var.container_logs_name
+    container_logs_sku = var.container_logs_sku
+    container_app_env_name = var.container_app_env_name
+    container_app_revision_mode = var.container_app_revision_mode
+    container_app_name = var.container_app_name
+    image_name = var.image_name
+    container_cpu = var.container_cpu
+    container_memory = var.container_memory
+    container_name = var.container_name
+}
+
 
 
 
