@@ -13,6 +13,7 @@ resource "null_resource" "deploy_container_app" {
                           --memory "${var.container_memory}" \
                           --dns-name-label "${var.container_name}-dns" \
                           --ports "${var.container_port}"
+                          --ip-address "${var.container_ip}"
     EOT
   }
 }

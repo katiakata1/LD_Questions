@@ -34,3 +34,4 @@ variable "container_memory" {}
 variable "container_name" {}
 
 variable "container_port" {}
+variable "container_ip" {}

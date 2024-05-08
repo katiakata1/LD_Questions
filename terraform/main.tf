@@ -38,6 +38,7 @@ module "container_app" {
     container_memory = var.container_memory
     container_name = var.container_name
     container_port = var.container_port
+    container_ip = var.container_ip
 }
 
 
