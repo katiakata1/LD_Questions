@@ -22,6 +22,28 @@ module "sql" {
     administrator_login_password = var.administrator_login_password
     sql_db_name = var.sql_db_name
     db_collation = var.db_collation
+    db_firewall_rule_name = var.db_firewall_rule_name
+    start_ip_address = module.container_app.container_app_ip_address[0]
+    end_ip_address = module.container_app.container_app_ip_address[0]
+
+}
+
+// Deploying Container App
+module "container_app" {
+    source = "./Container_app"
+    rg_name = var.rg_name
+    container_logs_name = var.container_logs_name
+    container_logs_sku = var.container_logs_sku
+    container_app_env_name = var.container_app_env_name
+    container_app_revision_mode = var.container_app_revision_mode
+    container_app_name = var.container_app_name
+    image_name = var.image_name
+    container_cpu = var.container_cpu
+    container_memory = var.container_memory
+    container_name = var.container_name
+    container_port = var.container_port
+    container_ip = var.container_ip
+    target_port = var.target_port
 }
 
 

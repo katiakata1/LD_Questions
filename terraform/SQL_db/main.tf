@@ -19,3 +19,11 @@ resource "azurerm_mssql_database" "sql_db" {
   collation           = var.db_collation
 }
 
+// Firewall rule allowing Container App to connect to DB
+resource "azurerm_mssql_firewall_rule" "db_firewall_rule" {
+  name             = var.db_firewall_rule_name
+  server_id        = azurerm_mssql_server.sql_server.id
+  start_ip_address = var.start_ip_address
+  end_ip_address   = var.end_ip_address
+}
+
