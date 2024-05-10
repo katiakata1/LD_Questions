@@ -32,6 +32,7 @@ RUN apt-get update && apt-get install -y curl gnupg && \
     apt-get update && \
     ACCEPT_EULA=Y apt-get install -y msodbcsql18 
 
+    
 # Set the PATH environment variable
 ENV PATH="/app:${PATH}"
 
