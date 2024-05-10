@@ -22,6 +22,10 @@ module "sql" {
     administrator_login_password = var.administrator_login_password
     sql_db_name = var.sql_db_name
     db_collation = var.db_collation
+    db_firewall_rule_name = var.db_firewall_rule_name
+    start_ip_address = module.container_app.container_app_ip_address
+    end_ip_address = module.container_app.container_app_ip_address
+
 }
 
 // Deploying Container App

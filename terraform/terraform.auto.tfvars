@@ -12,6 +12,8 @@ sql_server_version = "12.0"
 sql_db_name = "ld_sql_db"
 db_collation = "Cyrillic_General_CI_AS"
 
+db_firewall_rule_name = "ContainerAppIP"
+
 
 // Deploying Container App
 container_logs_name = "container-logs"

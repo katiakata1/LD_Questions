@@ -6,6 +6,10 @@ variable "administrator_login_password" {}
 variable "sql_db_name" {}
 variable "db_collation" {}
 
+variable "db_firewall_rule_name" {}
+variable "start_ip_address" {}
+variable "end_ip_address" {}
+
 # variable "db_edition" {}
 # variable "db_collation" {}
 # variable "db_auto_pause_delay" {}

@@ -22,6 +22,8 @@ variable "administrator_login_password" {}
 variable "sql_db_name" {}
 variable "db_collation" {}
 
+variable "db_firewall_rule_name" {}
+
 // Container App Variables
 variable "container_logs_name" {}
 variable "container_logs_sku" {}
