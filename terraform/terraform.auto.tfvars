@@ -26,3 +26,6 @@ container_name = "ld-questions-web"
 
 container_port = "5000"
 container_ip = "Public"
+
+// This is the port exposed on the container inside container app
+target_port = "5000"

@@ -2,23 +2,6 @@ data "azurerm_resource_group" "rg" {
   name = var.rg_name  
 }
 
-# resource "null_resource" "deploy_container_app" {
-#   provisioner "local-exec" {
-#     command = <<-EOT
-#       # Deploy Azure Container App using Azure CLI
-#       az container create --resource-group "${var.rg_name }" \
-#                           --name "${var.container_name}" \
-#                           --image "${var.image_name}" \
-#                           --cpu "${var.container_cpu}" \
-#                           --memory "${var.container_memory}" \
-#                           --dns-name-label "${var.container_name}-dns" \
-#                           --ports "${var.container_port}"
-#                           --ip-address "${var.container_ip}"
-#     EOT
-#   }
-# }
-
-
 resource "azurerm_log_analytics_workspace" "container_logs" {
   name                = var.container_logs_name
   location            = data.azurerm_resource_group.rg.location
@@ -47,5 +30,11 @@ resource "azurerm_container_app" "container_app" {
       cpu    = var.container_cpu
       memory = var.container_memory
     }
+  }
+
+  ingress {
+    external_enabled = true
+    target_port      = var.target_port
+    transport        = "auto"
   }
 }
