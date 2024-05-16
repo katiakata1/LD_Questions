@@ -2,6 +2,8 @@ name: Deploy to Azure Container App
 on:
   workflow_run:
     workflows: ["Build and push Docker image to Docker Hub"]
+    branches:
+        - docker
     types:
       - completed
 
