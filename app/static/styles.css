@@ -103,16 +103,16 @@ input[type="submit"]:hover {
 /* Styles for small devices (up to 768px) */
 @media screen and (max-width: 768px) {
     header {
-        padding: 14vw 0vw 6vw 4vw; /* top right bottom left */
+        padding: 10vw 0vw 6vw 4vw; /* top right bottom left */
     }
 
     header h1{
         padding: 2vw 8vw 1vw 8vw; /* top right bottom left */
-        font-size: 9.5vw;
+        font-size: 7vw;
     }
 
     form {
-        padding: 4vw 4vw 5vw 4vw;
+        padding: 0 4vw 5vw 4vw;
         justify-content: center;
         align-items: center;
     }
@@ -120,14 +120,14 @@ input[type="submit"]:hover {
     /* Adjust font size and padding for text input */
     input[type="text"] {
         width: 80%; 
-        height: 40px; 
-        font-size: 20px; 
+        height: 12vw; 
+        font-size: 5vw; 
         padding: 5px; 
     }
 
     /* Adjust padding for submit button */
     input[type="submit"] {
-        padding: 8px 15px; 
+        padding: 2.7vw 6vw;
         margin-top: 20px; 
     }
 
