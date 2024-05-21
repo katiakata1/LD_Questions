@@ -9,9 +9,3 @@ variable "db_collation" {}
 variable "db_firewall_rule_name" {}
 variable "start_ip_address" {}
 variable "end_ip_address" {}
-
-# variable "db_edition" {}
-# variable "db_collation" {}
-# variable "db_auto_pause_delay" {}
-# variable "db_min_capacity" {}
-# variable "db_max_capacity" {}
