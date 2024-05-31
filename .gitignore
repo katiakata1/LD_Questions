@@ -1,2 +1,4 @@
 LDvirtualenv
 .DS_Store
+app/.env
+
