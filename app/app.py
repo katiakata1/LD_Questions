@@ -5,12 +5,30 @@ from flask import redirect, url_for
 import pyodbc
 from sqlalchemy import create_engine
 import urllib
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  # Load environment variables from .env file if present
 
 app = Flask(__name__)
 
-params = urllib.parse.quote_plus \
-(r'Driver={ODBC Driver 18 for SQL Server};Server=tcp:ldquestionssqlserver.database.windows.net,1433;Database=ld_sql_db;Uid=sql_admin@ldquestionssqlserver;Pwd=LD_P@ssw0rd123!_secret;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
-# conn_str = 'mssql+pyodbc:///?odbc_connect={}'.format(params)
+db_driver = os.environ.get('DB_DRIVER')
+db_server = os.environ.get('DB_SERVER')
+db_name = os.environ.get('DB_NAME')
+db_user = os.environ.get('DB_USER')
+db_password = os.environ.get('DB_PASSWORD')
+
+params = urllib.parse.quote_plus(
+    f'Driver={db_driver};'
+    f'Server=tcp:{db_server},1433;'
+    f'Database={db_name};'
+    f'Uid={db_user};'
+    f'Pwd={db_password};'
+    f'Encrypt=yes;'
+    f'TrustServerCertificate=no;'
+    f'Connection Timeout=30;'
+)
+
 conn_str = f'mssql+pyodbc:///?odbc_connect={params};charset=utf8mb4'
 engine_azure = create_engine(conn_str,echo=True)
 

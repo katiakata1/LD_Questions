@@ -1,4 +1,4 @@
-name: Build and push Docker image to Docker Hub
+name: Build image and deploy to container app
 
 on:
   push:
@@ -18,7 +18,25 @@ jobs:
       run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
 
     - name: Build Docker image
-      run: docker build -t bujanovakatia/ld-questions:latest ./app
-
+      run: |
+        IMAGE_TAG=bujanovakatia/ld-questions:latest
+        docker build -t $IMAGE_TAG ./app
+      
     - name: Push Docker image to Docker Hub
-      run: docker push bujanovakatia/ld-questions:latest
+      run: |
+        IMAGE_TAG=bujanovakatia/ld-questions:latest
+        docker push $IMAGE_TAG
+    
+    - name: Deploy to Azure Container App
+      run: |
+        IMAGE_TAG=bujanovakatia/ld-questions:latest
+        az containerapp update --name container-app \
+          --resource-group LD_rg \
+          --image $IMAGE_TAG \
+          --set-env-vars \
+            DB_DRIVER=${{ secrets.DB_DRIVER }} \
+            DB_SERVER=${{ secrets.DB_SERVER }} \
+            DB_NAME=${{ secrets.DB_NAME }} \
+            DB_USER=${{ secrets.DB_USER }} \
+            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+
