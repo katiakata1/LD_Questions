@@ -37,9 +37,8 @@ jobs:
           --resource-group LD_rg \
           --image $IMAGE_TAG \
           --set-env-vars \
-            DB_DRIVER=${{ secrets.DB_DRIVER }} \
-            DB_SERVER=${{ secrets.DB_SERVER }} \
-            DB_NAME=${{ secrets.DB_NAME }} \
-            DB_USER=${{ secrets.DB_USER }} \
-            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-
+          DB_DRIVER=${{ secrets.DB_DRIVER }} \
+          DB_SERVER=${{ secrets.DB_SERVER }} \
+          DB_NAME=${{ secrets.DB_NAME }} \
+          DB_USER=${{ secrets.DB_USER }} \
+          DB_PASSWORD=secretref:${{ secrets.DB_PASSWORD }}
