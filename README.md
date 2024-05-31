@@ -11,6 +11,8 @@ How it looks like:
 
 ### When submitted
 <img width="1217" alt="Screenshot 2024-05-21 at 13 04 01" src="https://github.com/katiakata1/LD_Questions/assets/62849876/03aeddad-2959-4ea8-8196-a5d6a4016ab2">
+<br>
+<br>
 <img width="881" alt="Screenshot 2024-05-21 at 13 04 23" src="https://github.com/katiakata1/LD_Questions/assets/62849876/aafe7ea7-9442-4d03-a283-8136f030b014">
 
 ## Table of Contents
