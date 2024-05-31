@@ -25,10 +25,11 @@ A docker image was used because it might be a problem to install ODBC Driver 18 
 ## Repository Structure
 <br>
 ### github Folder
-- Contains two pipelines
-- One is for infrastructure configuration (terraform) and the second one is for docker image build and container app build
-- Terraform-apply.yml is triggered when new code is pushed to "terraform" branch and changes are made to terraform folder
-- docker-push.yml is triggered when a new code is pushed to "app" branch and changes are made to app folder 
+<br>
+- Contains two pipelines <br>
+- One is for infrastructure configuration (terraform) and the second one is for docker image build and container app build <br>
+- Terraform-apply.yml is triggered when new code is pushed to "terraform" branch and changes are made to terraform folder <br>
+- docker-push.yml is triggered when a new code is pushed to "app" branch and changes are made to app folder <br>
 
 - [Installation](#installation)
 - [Usage](#usage)
