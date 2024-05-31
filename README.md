@@ -23,7 +23,6 @@ Then the final code was used to build and deploy the docker image, which was the
 A docker image was used because it might be a problem to install ODBC Driver 18 on another service including Function App (I did not want to use VM).   
 
 ## Repository Structure
-<br>
 ### github Folder
 <br>
 - Contains two pipelines <br>
@@ -31,16 +30,8 @@ A docker image was used because it might be a problem to install ODBC Driver 18 
 - Terraform-apply.yml is triggered when new code is pushed to "terraform" branch and changes are made to terraform folder <br>
 - docker-push.yml is triggered when a new code is pushed to "app" branch and changes are made to app folder <br>
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
-- [Credits](#credits)
+### App Folder
+- it has web page source code
 
-## Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/yourusername/yourproject.git
+### Terraform Folder
+- it contains infrastructure-related information 
