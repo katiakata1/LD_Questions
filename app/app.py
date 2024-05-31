@@ -29,7 +29,6 @@ params = urllib.parse.quote_plus(
     f'Connection Timeout=30;'
 )
 
-
 conn_str = f'mssql+pyodbc:///?odbc_connect={params};charset=utf8mb4'
 engine_azure = create_engine(conn_str,echo=True)
 
