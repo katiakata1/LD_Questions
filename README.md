@@ -35,10 +35,22 @@ This is the architecture
 <img width="563" alt="Screenshot 2024-06-22 at 12 03 35" src="https://github.com/katiakata1/LD_Questions/assets/62849876/ef5b1e58-0f31-43f1-b7d5-cc72fa45abb1">
 <br>
 <br>
-The app was built locally first using Flask, Python and SQLite. 
-Then the SQLite was replaced by Azure MySQL Database using ODBC Driver 18 for SQL Server.
-Then the final code was used to build and deploy the docker image, which was then deployed to the Azure Container App. 
-A docker image was used because it might be a problem to install ODBC Driver 18 on another service including Function App (I did not want to use VM).  
+## Built with 
+<br>
+* Flask/python
+* Docker
+* Azure Container App
+* Dockerhub
+* Azure MySQL Database
+* Terraform
+* GitHub Actions
+
+## The process of how it was built
+<br>
+* The app was built locally first using Flask, Python and SQLite Database
+* The SQLite was replaced by Azure MySQL Database using ODBC Driver 18 for SQL Server
+* The final code was used to build and deploy the docker image, which was then deployed to the Azure Container App. A docker image was used because it might be a problem to install ODBC Driver 18 on another service including Function App (I did not want to use VM)
+* Purchased domain londonskaya-diaspora.co.uk on GoDaddy website and configured custom domain in Azure Container App which enabled the user to access the app with londonskaya-diaspora.co.uk. Also, generated a free (90 days) SSL certificate from https://app.zerossl.com/. 
 <br>
 
 ## Repository Structure
