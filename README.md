@@ -77,7 +77,7 @@ This pipeline does the following:
 * AZURE_CLIENT_SECRET - service principal secret
 * AZURE_TENANT_ID - azure subscription tenant ID
 * DB_DRIVER - in my case it was "ODBC Driver 18 for SQL Server"
-* DB_SERVER - <database-server-name>.database.windows.net
+* DB_SERVER - "database-server-name".database.windows.net
 * DB_NAME - database name 
 * DB_USER - when you created database, you specified the name of it 
 * DB_PASSWORD - when you created database, you specified the password for it 
