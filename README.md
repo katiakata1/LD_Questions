@@ -4,8 +4,7 @@ Londonskaya Diaspora (LD) is a video interview project based at Pushkin House in
 This app was designed to collect questions that our audience might have about or to our guests.  
 All questions are anonymous. Here is the website - https://www.londonskaya-diaspora.co.uk/  
 
-## How it looks like:
-<br>
+## Visual Overview
 
 ### Frontpage
 This is the front page the user sees. 
@@ -51,15 +50,15 @@ This is the architecture
 * Purchased domain londonskaya-diaspora.co.uk on GoDaddy website and configured custom domain in Azure Container App which enabled the user to access the app with londonskaya-diaspora.co.uk. Also, generated a free (90 days) SSL certificate from https://app.zerossl.com/. 
 <br>
 
-## Repository Structure
-### github Folder
+# Repository Structure
+## github Folder
 - Contains two pipelines
 - One is for infrastructure configuration (terraform) and the second one is for docker image build and container app build
 - Terraform-apply.yml is triggered when new code is pushed to "terraform" branch and changes are made to terraform folder
 - docker-push.yml is triggered when a new code is pushed to "app" branch and changes are made to app folder 
 
-### App Folder
+## App Folder
 - it has web page source code
 
-### Terraform Folder
+## Terraform Folder
 - it contains infrastructure-related information 
