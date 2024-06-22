@@ -4,7 +4,7 @@ Londonskaya Diaspora (LD) is a video interview project based at Pushkin House in
 This app was designed to collect questions that our audience might have about or to our guests.  
 All questions are anonymous. Here is the website - https://www.londonskaya-diaspora.co.uk/  
 
-# Visual Overview
+# Visual Overview :desktop_computer:
 ## Frontpage
 This is the front page the user sees. 
 <img width="1417" alt="Screenshot 2024-05-21 at 13 01 52" src="https://github.com/katiakata1/LD_Questions/assets/62849876/d6c29628-2dff-424d-adae-df42328d0b1d">
@@ -24,7 +24,7 @@ Finally, the question "this is my question" can be seen in the database with the
 <br>
 
 
-# Technical Overview
+# Technical Overview :gear:
 The architecture used for this project
 <br>
 <img width="563" alt="Screenshot 2024-06-22 at 12 03 35" src="https://github.com/katiakata1/LD_Questions/assets/62849876/ef5b1e58-0f31-43f1-b7d5-cc72fa45abb1">
@@ -46,7 +46,7 @@ The architecture used for this project
 * Purchased domain londonskaya-diaspora.co.uk on GoDaddy website and configured custom domain in Azure Container App which enabled the user to access the app with londonskaya-diaspora.co.uk. Also, generated a free (90 days) SSL certificate from https://app.zerossl.com/. 
 <br>
 
-# Repository Structure
+# Repository Structure :card_index_dividers:
 <img width="930" alt="Screenshot 2024-06-22 at 13 42 13" src="https://github.com/katiakata1/LD_Questions/assets/62849876/a00222e2-39a4-4fff-9c40-e3aaa99ed5af">
 
 ## github Folder
@@ -66,7 +66,7 @@ The architecture used for this project
 <br>
 <br>
 
-# CI/CD Pipelines
+# CI/CD Pipelines :chains:
 ## App Pipeline (docker-push.yml) - Builds, pushes the image and updates the Container App
 This pipeline does the following: 
 1. Logins to Dockerhub account
