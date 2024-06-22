@@ -36,8 +36,6 @@ This is the architecture
 <br>
 <br>
 ## Built with 
-<br>
-
 * Flask/python
 * Docker
 * Azure Container App
@@ -47,8 +45,6 @@ This is the architecture
 * GitHub Actions
 
 ## The process of how it was built
-<br>
-
 * The app was built locally first using Flask, Python and SQLite Database
 * The SQLite was replaced by Azure MySQL Database using ODBC Driver 18 for SQL Server
 * The final code was used to build and deploy the docker image, which was then deployed to the Azure Container App. A docker image was used because it might be a problem to install ODBC Driver 18 on another service including Function App (I did not want to use VM)
