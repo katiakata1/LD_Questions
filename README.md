@@ -25,7 +25,7 @@ Finally, the question "this is my question" can be seen in the database with the
 
 
 # Technical Overview
-This is the architecture
+The architecture used for this project
 <br>
 <img width="563" alt="Screenshot 2024-06-22 at 12 03 35" src="https://github.com/katiakata1/LD_Questions/assets/62849876/ef5b1e58-0f31-43f1-b7d5-cc72fa45abb1">
 <br>
@@ -62,7 +62,7 @@ This is the architecture
 <br>
 
 # CI/CD Pipelines
-## App Pipeline - Builds, pushes the image and updates the Container App
+## App Pipeline (docker-push.yml) - Builds, pushes the image and updates the Container App
 This pipeline does the following: 
 1. Logins to Dockerhub account
 2. Builds docker image from repository specified containing Dockerfile
@@ -79,8 +79,32 @@ This pipeline does the following:
 * DB_DRIVER - in my case it was "ODBC Driver 18 for SQL Server"
 * DB_SERVER - "database-server-name".database.windows.net
 * DB_NAME - database name 
-* DB_USER - when you created database, you specified the name of it 
-* DB_PASSWORD - when you created database, you specified the password for it 
+* DB_USER - when you created database, you specified the name of the user that can login to db
+* DB_PASSWORD - when you created database, you specified the password for that user
+<br>
+<br>
+
+## Terraform Pipeline (terraform-apply.yml) - Builds and updated infrastructure
+This pipeline does the following:
+1. Logins to Azure
+2. Sets correct subscription
+3. Terraform init
+4. Terraform validate 
+5. Terraform plan
+6. Terraform apply
+
+### Variables required
+* AZURE_CLIENT_ID - service principal application (client) ID
+* AZURE_CLIENT_SECRET - service principal secret
+* AZURE_TENANT_ID - azure subscription tenant ID
+* AZURE_SUBSCRIPTION_ID - azure subscription ID
+* SQL_ADMIN_LOGIN - when you created database, you specified the name of the user that can login to db (same as DB_USER)
+* SQL_ADMIN_PASSWORD - when you created database, you specified the password for that user (same as DB_PASSWORD)
+<br>
+<br>
+
+## The full list of secret variables in GitHub Actions
+<img width="783" alt="Screenshot 2024-06-22 at 13 40 24" src="https://github.com/katiakata1/LD_Questions/assets/62849876/1172f427-3a0c-46db-a188-8fb982df3353">
 
 
 
