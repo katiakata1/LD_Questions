@@ -47,17 +47,22 @@ The architecture used for this project
 <br>
 
 # Repository Structure
+<img width="930" alt="Screenshot 2024-06-22 at 13 42 13" src="https://github.com/katiakata1/LD_Questions/assets/62849876/a00222e2-39a4-4fff-9c40-e3aaa99ed5af">
+
 ## github Folder
 - Contains two pipelines
 - One is for infrastructure configuration (terraform) and the second one is for docker image build and container app build
 - Terraform-apply.yml is triggered when new code is pushed to "terraform" branch and changes are made to terraform folder
 - docker-push.yml is triggered when a new code is pushed to "app" branch and changes are made to app folder 
+<img width="1096" alt="Screenshot 2024-06-22 at 13 43 08" src="https://github.com/katiakata1/LD_Questions/assets/62849876/18394b73-e6d5-417d-860d-99803b9c2b32">
 
 ## App Folder
 - it has web page source code
+<img width="1100" alt="Screenshot 2024-06-22 at 13 43 34" src="https://github.com/katiakata1/LD_Questions/assets/62849876/233d1a29-d1d1-4073-b92c-c860da65aba4">
 
 ## Terraform Folder
 - it contains infrastructure-related information
+<img width="1102" alt="Screenshot 2024-06-22 at 13 43 55" src="https://github.com/katiakata1/LD_Questions/assets/62849876/4464ad58-df52-41a4-b48c-df6c445ec63c">
 <br>
 <br>
 
@@ -82,7 +87,6 @@ This pipeline does the following:
 * DB_USER - when you created database, you specified the name of the user that can login to db
 * DB_PASSWORD - when you created database, you specified the password for that user
 <br>
-<br>
 
 ## Terraform Pipeline (terraform-apply.yml) - Builds and updated infrastructure
 This pipeline does the following:
@@ -100,7 +104,6 @@ This pipeline does the following:
 * AZURE_SUBSCRIPTION_ID - azure subscription ID
 * SQL_ADMIN_LOGIN - when you created database, you specified the name of the user that can login to db (same as DB_USER)
 * SQL_ADMIN_PASSWORD - when you created database, you specified the password for that user (same as DB_PASSWORD)
-<br>
 <br>
 
 ## The full list of secret variables in GitHub Actions
