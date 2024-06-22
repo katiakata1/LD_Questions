@@ -30,7 +30,10 @@ Finally, the question "this is my question" can be seen in the database with the
 
 # Technical Overview
 This is the architecture
+<br>
+<br>
 <img width="563" alt="Screenshot 2024-06-22 at 12 03 35" src="https://github.com/katiakata1/LD_Questions/assets/62849876/ef5b1e58-0f31-43f1-b7d5-cc72fa45abb1">
+<br>
 <br>
 The app was built locally first using Flask, Python and SQLite. 
 Then the SQLite was replaced by Azure MySQL Database using ODBC Driver 18 for SQL Server.
