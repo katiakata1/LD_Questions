@@ -58,6 +58,8 @@ This is the architecture
 
 ## Terraform Folder
 - it contains infrastructure-related information
+<br>
+<br>
 
 # CI/CD Pipelines
 ## App Pipeline - Builds, pushes the image and updates the Container App
@@ -71,7 +73,7 @@ This pipeline does the following:
 ### Variables required
 * DOCKERHUB_PASSWORD - your password to Dockerhub (You need to create an account in Dockerhub)
 * DOCKERHUB_USERNAME - your username to Dockerhub
-* AZURE_CLIENT_ID - service principal client ID
+* AZURE_CLIENT_ID - service principal application (client) ID
 * AZURE_CLIENT_SECRET - service principal secret
 * AZURE_TENANT_ID - azure subscription tenant ID
 * DB_DRIVER - in my case it was "ODBC Driver 18 for SQL Server"
