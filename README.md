@@ -1,4 +1,4 @@
-# LD Questions - Ask any questions anonymously
+# LD Questions - Ask any questions anonymously :sassy_woman:
 
 Londonskaya Diaspora (LD) is a video interview project based at Pushkin House in London, the aim of which is to give a platform between Russian-speaking event organisers and their audience.   
 This app was designed to collect questions that our audience might have about or to our guests.  
