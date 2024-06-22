@@ -29,11 +29,11 @@ Finally, the question "this is my question" can be seen in the database with the
 <br>
 
 # Technical Overview
-## The stack
 The app was built locally first using Flask, Python and SQLite. 
 Then the SQLite was replaced by Azure MySQL Database using ODBC Driver 18 for SQL Server.
 Then the final code was used to build and deploy the docker image, which was then deployed to the Azure Container App. 
-A docker image was used because it might be a problem to install ODBC Driver 18 on another service including Function App (I did not want to use VM).   
+A docker image was used because it might be a problem to install ODBC Driver 18 on another service including Function App (I did not want to use VM).  
+<br>
 
 ## Repository Structure
 ### github Folder
