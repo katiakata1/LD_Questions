@@ -109,6 +109,12 @@ This pipeline does the following:
 ## The full list of secret variables in GitHub Actions
 <img width="783" alt="Screenshot 2024-06-22 at 13 40 24" src="https://github.com/katiakata1/LD_Questions/assets/62849876/1172f427-3a0c-46db-a188-8fb982df3353">
 
+<br>
+# What to Improve 
+1. Monitoring has to be added to see when and how many API calls are made to this resource. 
+2. Autoscalling should be introduced to make the app more available to users during peak times and make the app load faster 
+
+
 
 
 
