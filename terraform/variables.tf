@@ -38,3 +38,5 @@ variable "container_name" {}
 variable "container_port" {}
 variable "container_ip" {}
 variable "target_port" {}
+
+variable "app_insights_name" {}

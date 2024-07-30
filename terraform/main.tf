@@ -46,6 +46,12 @@ module "container_app" {
     target_port = var.target_port
 }
 
+module "app_insights" {
+    source = "./App_Insights"
+    rg_name = var.rg_name
+    app_insights_name = var.app_insights_name
+}
+
 
 
 
