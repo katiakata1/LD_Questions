@@ -19,12 +19,12 @@ jobs:
 
     - name: Build Docker image
       run: |
-        IMAGE_TAG=bujanovakatia/ld-questions:latest
+        IMAGE_TAG=bujanovakatia/ld-questions:v1.0.1
         docker build -t $IMAGE_TAG ./app
       
     - name: Push Docker image to Docker Hub
       run: |
-        IMAGE_TAG=bujanovakatia/ld-questions:latest
+        IMAGE_TAG=bujanovakatia/ld-questions:v1.0.1
         docker push $IMAGE_TAG
     
     - name: Azure Login
@@ -32,7 +32,7 @@ jobs:
     
     - name: Deploy to Azure Container App
       run: |
-        IMAGE_TAG=bujanovakatia/ld-questions:latest
+        IMAGE_TAG=bujanovakatia/ld-questions:v1.0.1
         az containerapp update --name container-app \
           --resource-group LD_rg \
           --image $IMAGE_TAG \
@@ -41,4 +41,5 @@ jobs:
           "DB_SERVER=${{ secrets.DB_SERVER }}" \
           "DB_NAME=${{ secrets.DB_NAME }}" \
           "DB_USER=${{ secrets.DB_USER }}" \
-          "DB_PASSWORD=${{ secrets.DB_PASSWORD }}"
+          "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" \
+          "INSTRUMENTATION_KEY=${{ secrets.INSTRUMENTATION_KEY }}"
