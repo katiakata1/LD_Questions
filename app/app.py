@@ -48,8 +48,8 @@ class Entry(db.Model):
     content = db.Column(db.UnicodeText(collation='Cyrillic_General_CI_AS'), nullable=False)  # Use UnicodeText to support longer strings
     created_at = db.Column(db.DateTime, default=datetime.utcnow) 
 
-instrumentation_key = os.getenv('INSTRUMENTATION_KEY') 
-print(f"Instrumentation Key: {instrumentation_key}")
+
+instrumentation_key = os.environ.get('INSTRUMENTATION_KEY')
 # Configure logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
