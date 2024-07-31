@@ -31,3 +31,7 @@ container_ip = "Public"
 
 // This is the port exposed on the container inside container app
 target_port = "5000"
+
+
+// Monitoring
+app_insights_name = "Container-app-insights"
