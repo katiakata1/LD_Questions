@@ -69,5 +69,3 @@ module "app_insights" {
 
 
 
-
-
