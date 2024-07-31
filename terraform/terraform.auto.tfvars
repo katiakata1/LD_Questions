@@ -26,6 +26,8 @@ container_cpu = "0.5"
 container_memory = "1Gi"
 container_name = "ld-questions-web"
 
+
+
 container_port = "5000"
 container_ip = "Public"
 
