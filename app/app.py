@@ -50,12 +50,14 @@ class Entry(db.Model):
  
 
 instrumentation_key = os.environ.get('INSTRUMENTATION_KEY')
-logger.info(f"Instrumentation Key: {instrumentation_key}")
 # Configure logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 logger.addHandler(AzureLogHandler(connection_string=f'InstrumentationKey={instrumentation_key}'))
+
+logger.info(f"Instrumentation Key: {instrumentation_key}")
 logger.info("Application has started")
+
 # Configure tracing
 tracer = Tracer(
     exporter=AzureExporter(connection_string=f'InstrumentationKey={instrumentation_key}'),
