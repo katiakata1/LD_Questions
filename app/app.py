@@ -50,6 +50,7 @@ class Entry(db.Model):
  
 
 instrumentation_key = os.environ.get('INSTRUMENTATION_KEY')
+logger.info(f"Instrumentation Key: {instrumentation_key}")
 # Configure logging
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
