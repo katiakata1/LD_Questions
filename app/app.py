@@ -7,6 +7,12 @@ from sqlalchemy import create_engine
 import urllib
 from dotenv import load_dotenv
 import os
+import logging
+from opencensus.ext.azure.log_exporter import AzureLogHandler
+from opencensus.ext.azure.trace_exporter import AzureExporter
+from opencensus.trace.samplers import ProbabilitySampler
+from opencensus.trace.tracer import Tracer
+
 
 load_dotenv()  # Load environment variables from .env file if present
 
@@ -42,25 +48,50 @@ class Entry(db.Model):
     content = db.Column(db.UnicodeText(collation='Cyrillic_General_CI_AS'), nullable=False)  # Use UnicodeText to support longer strings
     created_at = db.Column(db.DateTime, default=datetime.utcnow) 
 
+instrumentation_key = os.getenv('INSTRUMENTATION_KEY') 
+print(f"Instrumentation Key: {instrumentation_key}")
+# Configure logging
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+logger.addHandler(AzureLogHandler(connection_string=f'InstrumentationKey={instrumentation_key}'))
+logger.info("Application has started")
+# Configure tracing
+tracer = Tracer(
+    exporter=AzureExporter(connection_string=f'InstrumentationKey={instrumentation_key}'),
+    sampler=ProbabilitySampler(1.0)
+)
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    start_time = datetime.now()
+    response = render_template('index.html')
+    elapsed_time = datetime.now() - start_time
+    logger.info(f"Page load time for index: {elapsed_time.total_seconds()} seconds")
+    return response
 
 @app.route('/thankyou')
 def thankyou():
-    return render_template('thankyou.html')
+    start_time = datetime.now()
+    response = render_template('thankyou.html')
+    elapsed_time = datetime.now() - start_time
+    logger.info(f"Page load time for thankyou: {elapsed_time.total_seconds()} seconds")
+    return response
 
 @app.route('/submit', methods=['POST'])
 def submit():
     if request.method == 'POST':
         entry_content = request.form['entry']
-        # entry_content_utf8 = entry_content.encode('utf-8')
         new_entry = Entry(content=entry_content)
-        db.session.add(new_entry)
-        db.session.commit()
+        try:
+            db.session.add(new_entry)
+            db.session.commit()
+            logger.info("Entry submitted successfully")
+        except Exception as e:
+            logger.error(f"Error submitting entry: {e}")
         return redirect(url_for('thankyou'))  # Redirect to the thank you page
 
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
+        logger.info("Database tables created")
     app.run(port=5000, host='0.0.0.0', debug=True)
