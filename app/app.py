@@ -47,7 +47,7 @@ class Entry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.UnicodeText(collation='Cyrillic_General_CI_AS'), nullable=False)  # Use UnicodeText to support longer strings
     created_at = db.Column(db.DateTime, default=datetime.utcnow) 
-
+ 
 
 instrumentation_key = os.environ.get('INSTRUMENTATION_KEY')
 # Configure logging
