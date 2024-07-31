@@ -27,19 +27,19 @@ jobs:
         IMAGE_TAG=bujanovakatia/ld-questions:v1.0.1
         docker push $IMAGE_TAG
     
-    # - name: Azure Login
-    #   run: az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+    - name: Azure Login
+      run: az login --service-principal -u ${{ secrets.AZURE_CLIENT_ID }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
     
-    # - name: Deploy to Azure Container App
-    #   run: |
-    #     IMAGE_TAG=bujanovakatia/ld-questions:v1.0.1
-    #     az containerapp update --name container-app \
-    #       --resource-group LD_rg \
-    #       --image $IMAGE_TAG \
-    #       --set-env-vars \
-    #       "DB_DRIVER=${{ secrets.DB_DRIVER }}" \
-    #       "DB_SERVER=${{ secrets.DB_SERVER }}" \
-    #       "DB_NAME=${{ secrets.DB_NAME }}" \
-    #       "DB_USER=${{ secrets.DB_USER }}" \
-    #       "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" \
-    #       "INSTRUMENTATION_KEY=${{ secrets.INSTRUMENTATION_KEY }}"
+    - name: Deploy to Azure Container App
+      run: |
+        IMAGE_TAG=bujanovakatia/ld-questions:v1.0.1
+        az containerapp update --name container-app \
+          --resource-group LD_rg \
+          --image $IMAGE_TAG \
+          --set-env-vars \
+          "DB_DRIVER=${{ secrets.DB_DRIVER }}" \
+          "DB_SERVER=${{ secrets.DB_SERVER }}" \
+          "DB_NAME=${{ secrets.DB_NAME }}" \
+          "DB_USER=${{ secrets.DB_USER }}" \
+          "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" \
+          "INSTRUMENTATION_KEY=${{ secrets.INSTRUMENTATION_KEY }}"

@@ -13,7 +13,7 @@ from opencensus.ext.azure.trace_exporter import AzureExporter
 from opencensus.trace.samplers import ProbabilitySampler
 from opencensus.trace.tracer import Tracer
 
-
+  
 load_dotenv()  # Load environment variables from .env file if present
 
 app = Flask(__name__)
