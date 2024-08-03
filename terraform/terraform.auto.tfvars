@@ -33,7 +33,9 @@ min_app_replica = 1
 max_app_replica = 3
 
 app_rule_name_scale_up = "cpu-scale-up"
-app_rule_metric = "cpu"
+app_rule_type = "cpu"
+
+
 app_rule_scale_up_operator = "GreaterThan"
 app_rule_scale_up_threshold = "80"
 app_rule_scale_up_direction = "Increase"

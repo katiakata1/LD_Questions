@@ -21,7 +21,7 @@ variable "min_app_replica" {}
 variable "max_app_replica" {}
 
 variable "app_rule_name_scale_up" {}
-variable "app_rule_metric" {}
+variable "app_rule_type" {}
 variable "app_rule_scale_up_operator" {}
 variable "app_rule_scale_up_threshold" {}
 variable "app_rule_scale_up_direction" {}

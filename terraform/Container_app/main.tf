@@ -30,6 +30,18 @@ resource "azurerm_container_app" "container_app" {
       cpu    = var.container_cpu
       memory = var.container_memory
     }
+
+    min_replicas = var.min_app_replica
+    max_replicas = var.max_app_replica
+
+    custom_scale_rule {
+      name = var.app_rule_name_scale_up
+      custom_rule_type = var.app_rule_type
+      metadata = {
+        type = "Utilization"
+        value = "80"
+      }
+    }
   }
 
   ingress {
@@ -42,28 +54,28 @@ resource "azurerm_container_app" "container_app" {
     }
   }
 
-  scale {
-    min_replicas = var.min_app_replica
-    max_replicas = var.max_app_replica
+  # scale {
+  #   min_replicas = var.min_app_replica
+  #   max_replicas = var.max_app_replica
 
-    rule {
-      name     = var.app_rule_name_scale_up
-      metric   = var.app_rule_metric
-      operator  = var.app_rule_scale_up_operator
-      threshold = var.app_rule_scale_up_threshold
-      direction = var.app_rule_scale_up_direction
-      cooldown  = var.app_rule_scale_up_cooldown
-    }
+  #   rule {
+  #     name     = var.app_rule_name_scale_up
+  #     metric   = var.app_rule_metric
+  #     operator  = var.app_rule_scale_up_operator
+  #     threshold = var.app_rule_scale_up_threshold
+  #     direction = var.app_rule_scale_up_direction
+  #     cooldown  = var.app_rule_scale_up_cooldown
+  #   }
 
-    rule {
-      name     = var.app_rule_name_scale_down
-      metric   = var.app_rule_metric
-      operator  = var.app_rule_scale_down_operator
-      threshold = var.app_rule_scale_down_threshold
-      direction = var.app_rule_scale_down_direction
-      cooldown  = var.app_rule_scale_down_cooldown
-    }
-  }
+  #   rule {
+  #     name     = var.app_rule_name_scale_down
+  #     metric   = var.app_rule_metric
+  #     operator  = var.app_rule_scale_down_operator
+  #     threshold = var.app_rule_scale_down_threshold
+  #     direction = var.app_rule_scale_down_direction
+  #     cooldown  = var.app_rule_scale_down_cooldown
+  #   }
+  # }
 
   
 }
