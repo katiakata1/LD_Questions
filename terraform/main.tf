@@ -45,8 +45,8 @@ module "container_app" {
     container_ip = var.container_ip
     target_port = var.target_port
 
-    min_replicas = var.min_app_replica
-    max_replicas = var.max_app_replica
+    min_app_replica = var.min_app_replica
+    max_app_replica = var.max_app_replica
     app_rule_name_scale_up = var.app_rule_name_scale_up
     app_rule_metric = var.app_rule_metric
     app_rule_scale_up_operator = var.app_rule_scale_up_operator
