@@ -13,6 +13,8 @@ from opencensus.ext.azure.trace_exporter import AzureExporter
 from opencensus.trace.samplers import ProbabilitySampler
 from opencensus.trace.tracer import Tracer
 
+# Capture container startup time
+container_start_time = datetime.now()
   
 load_dotenv()  # Load environment variables from .env file if present
 
@@ -54,8 +56,6 @@ instrumentation_key = os.environ.get('INSTRUMENTATION_KEY')
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 logger.addHandler(AzureLogHandler(connection_string=f'InstrumentationKey={instrumentation_key}'))
-
-logger.info(f"Instrumentation Key: {instrumentation_key}")
 logger.info("Application has started")
 
 # Configure tracing
@@ -97,4 +97,10 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
         logger.info("Database tables created")
+
+    # Capture application ready time
+    app_ready_time = datetime.now()
+    initialization_time = (app_ready_time - container_start_time).total_seconds()
+    logger.info(f"Flask app initialization time: {initialization_time} seconds")
+    
     app.run(port=5000, host='0.0.0.0', debug=True)
