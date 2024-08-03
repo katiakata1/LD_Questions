@@ -48,7 +48,7 @@ module "container_app" {
     min_app_replica = var.min_app_replica
     max_app_replica = var.max_app_replica
     app_rule_name_scale_up = var.app_rule_name_scale_up
-    app_rule_metric = var.app_rule_metric
+    app_rule_type = var.app_rule_type
     app_rule_scale_up_operator = var.app_rule_scale_up_operator
     app_rule_scale_up_threshold = var.app_rule_scale_up_threshold
     app_rule_scale_up_direction = var.app_rule_scale_up_direction
