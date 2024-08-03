@@ -49,15 +49,12 @@ module "container_app" {
     max_app_replica = var.max_app_replica
     app_rule_name_scale_up = var.app_rule_name_scale_up
     app_rule_type = var.app_rule_type
-    app_rule_scale_up_operator = var.app_rule_scale_up_operator
-    app_rule_scale_up_threshold = var.app_rule_scale_up_threshold
-    app_rule_scale_up_direction = var.app_rule_scale_up_direction
-    app_rule_scale_up_cooldown = var.app_rule_scale_up_cooldown
+    app_scale_up_rule_type = var.app_scale_up_rule_type
+    app_scale_up_rule_value = var.app_scale_up_rule_value
+
     app_rule_name_scale_down = var.app_rule_name_scale_down
-    app_rule_scale_down_operator = var.app_rule_scale_down_operator
-    app_rule_scale_down_threshold = var.app_rule_scale_down_threshold
-    app_rule_scale_down_direction = var.app_rule_scale_down_direction
-    app_rule_scale_down_cooldown = var.app_rule_scale_down_cooldown
+    app_scale_down_rule_type = var.app_scale_down_rule_type
+    app_scale_down_rule_value = var.app_scale_down_rule_value
 }
 
 module "app_insights" {

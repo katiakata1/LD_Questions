@@ -34,18 +34,12 @@ max_app_replica = 3
 
 app_rule_name_scale_up = "cpu-scale-up"
 app_rule_type = "cpu"
-
-
-app_rule_scale_up_operator = "GreaterThan"
-app_rule_scale_up_threshold = "80"
-app_rule_scale_up_direction = "Increase"
-app_rule_scale_up_cooldown = "60s"
+app_scale_up_rule_type = "Utilization"
+app_scale_up_rule_value = "80"
 
 app_rule_name_scale_down = "cpu-scale-down"
-app_rule_scale_down_operator = "LessThan"
-app_rule_scale_down_threshold = "20"
-app_rule_scale_down_direction = "Decrease"
-app_rule_scale_down_cooldown = "60s"
+app_scale_down_rule_type = "Utilization"
+app_scale_down_rule_value = "30"
 
 // This is the port exposed on the container inside container app
 target_port = "5000"
