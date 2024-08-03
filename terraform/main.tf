@@ -50,11 +50,10 @@ module "container_app" {
     app_rule_name_scale_up = var.app_rule_name_scale_up
     app_rule_metric = var.app_rule_metric
     app_rule_scale_up_operator = var.app_rule_scale_up_operator
-    var.app_rule_scale_up_threshold = var.app_rule_scale_up_threshold
+    app_rule_scale_up_threshold = var.app_rule_scale_up_threshold
     app_rule_scale_up_direction = var.app_rule_scale_up_direction
     app_rule_scale_up_cooldown = var.app_rule_scale_up_cooldown
     app_rule_name_scale_down = var.app_rule_name_scale_down
-    app_rule_metric = var.app_rule_metric
     app_rule_scale_down_operator = var.app_rule_scale_down_operator
     app_rule_scale_down_threshold = var.app_rule_scale_down_threshold
     app_rule_scale_down_direction = var.app_rule_scale_down_direction
