@@ -26,10 +26,20 @@ container_cpu = "0.5"
 container_memory = "1Gi"
 container_name = "ld-questions-web"
 
-
-
 container_port = "5000"
 container_ip = "Public"
+
+min_app_replica = 1
+max_app_replica = 3
+
+app_rule_name_scale_up = "memory-scale-up"
+app_rule_type = "memory"
+app_scale_up_rule_type = "Utilization"
+app_scale_up_rule_value = "80"
+
+app_rule_name_scale_down = "memory-scale-down"
+app_scale_down_rule_type = "Utilization"
+app_scale_down_rule_value = "30"
 
 // This is the port exposed on the container inside container app
 target_port = "5000"

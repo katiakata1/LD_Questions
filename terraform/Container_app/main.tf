@@ -30,6 +30,27 @@ resource "azurerm_container_app" "container_app" {
       cpu    = var.container_cpu
       memory = var.container_memory
     }
+
+    min_replicas = var.min_app_replica
+    max_replicas = var.max_app_replica
+
+    custom_scale_rule {
+      name = var.app_rule_name_scale_up
+      custom_rule_type = var.app_rule_type
+      metadata = {
+        type = var.app_scale_up_rule_type
+        value = var.app_scale_up_rule_value
+      }
+    }
+
+    custom_scale_rule {
+      name = var.app_rule_name_scale_down
+      custom_rule_type = var.app_rule_type
+      metadata = {
+        type = var.app_scale_down_rule_type
+        value = var.app_scale_down_rule_value
+      }
+    }
   }
 
   ingress {
@@ -42,3 +63,4 @@ resource "azurerm_container_app" "container_app" {
     }
   }
 }
+

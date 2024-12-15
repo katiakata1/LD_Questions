@@ -44,6 +44,17 @@ module "container_app" {
     container_port = var.container_port
     container_ip = var.container_ip
     target_port = var.target_port
+
+    min_app_replica = var.min_app_replica
+    max_app_replica = var.max_app_replica
+    app_rule_name_scale_up = var.app_rule_name_scale_up
+    app_rule_type = var.app_rule_type
+    app_scale_up_rule_type = var.app_scale_up_rule_type
+    app_scale_up_rule_value = var.app_scale_up_rule_value
+
+    app_rule_name_scale_down = var.app_rule_name_scale_down
+    app_scale_down_rule_type = var.app_scale_down_rule_type
+    app_scale_down_rule_value = var.app_scale_down_rule_value
 }
 
 module "app_insights" {

@@ -60,8 +60,8 @@ jobs:
 
       - name: Terraform Plan
         working-directory: terraform/
-        run: terraform plan -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" -var="client_id=${{ secrets.AZURE_CLIENT_ID }}" -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" -var="tenant_id=${{ secrets.AZURE_TENANT_ID }}" -var="administrator_login=${{ secrets.SQL_ADMIN_LOGIN }}" -var="administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}"
+        run: terraform plan -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" -var="client_id=${{ secrets.AZURE_CLIENT_ID }}" -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" -var="tenant_id=${{ secrets.AZURE_TENANT_ID }}" -var="administrator_login=${{ secrets.SQL_ADMIN_LOGIN }}" -var="administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}" 
 
       - name: Terraform Apply
         working-directory: terraform/
-        run: terraform apply -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" -var="client_id=${{ secrets.AZURE_CLIENT_ID }}" -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" -var="tenant_id=${{ secrets.AZURE_TENANT_ID }}" -var="administrator_login=${{ secrets.SQL_ADMIN_LOGIN }}" -var="administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}"  -auto-approve
+        run: terraform apply -var="subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}" -var="client_id=${{ secrets.AZURE_CLIENT_ID }}" -var="client_secret=${{ secrets.AZURE_CLIENT_SECRET }}" -var="tenant_id=${{ secrets.AZURE_TENANT_ID }}" -var="administrator_login=${{ secrets.SQL_ADMIN_LOGIN }}" -var="administrator_login_password=${{ secrets.SQL_ADMIN_PASSWORD }}" -auto-approve
