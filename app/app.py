@@ -105,3 +105,4 @@ if __name__ == '__main__':
     logger.info(f"Flask app initialization time: {initialization_time} seconds")
     
     app.run(port=5000, host='0.0.0.0', debug=True)
+
