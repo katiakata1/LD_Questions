@@ -63,3 +63,4 @@ resource "azurerm_container_app" "container_app" {
     }
   }
 }
+
