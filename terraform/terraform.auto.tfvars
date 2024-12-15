@@ -32,12 +32,12 @@ container_ip = "Public"
 min_app_replica = 1
 max_app_replica = 3
 
-app_rule_name_scale_up = "cpu-scale-up"
-app_rule_type = "cpu"
+app_rule_name_scale_up = "memory-scale-up"
+app_rule_type = "memory"
 app_scale_up_rule_type = "Utilization"
 app_scale_up_rule_value = "80"
 
-app_rule_name_scale_down = "cpu-scale-down"
+app_rule_name_scale_down = "memory-scale-down"
 app_scale_down_rule_type = "Utilization"
 app_scale_down_rule_value = "30"
 
